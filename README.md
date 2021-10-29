@@ -9,7 +9,7 @@ O gitpod é um ambiente de desenvolvimento em núvem gratuido (para repositório
 <a href="www.gitpod.io#https://github.com/Liga-IA/Chatbot-LIA-SAEC" 
    target="_blank">
   <img src="https://user-images.githubusercontent.com/42501669/139507006-625831cd-349f-4ae0-9356-38505cb8c2f2.png" 
-        alt="IMAGE ALT TEXT HERE" width="auto" height="32" border="10" />
+        width="auto" height="32" border="10" />
 </a>
 
 ### Versões das Dependências
@@ -21,7 +21,7 @@ O gitpod é um ambiente de desenvolvimento em núvem gratuido (para repositório
   - RASA SDK: 2.8.2
 
 ### Instalação e setup do ambiente
-
+note que para executar comendos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
 - `$ pipenv install rasa`
     - Instala o RASA
     - Demora um pouco, entre 15 a 30 minutos dependendo da sua internet
@@ -37,5 +37,15 @@ Caso esteja executando localmente, os procedimentos aqui apenas serão visivei e
 
 `$ rasa run -m models --enable-api --cors "*"`
 
-Isso vai iniciar a API do chatbot na porta `5005`, note que para executar comendos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
+Isso vai iniciar a API do chatbot na porta `5005`.
  
+## Integrando com o site
+
+Adicione o segunte script na tag `body` do seu html
+
+```
+  <div  
+    data-root-element-id="storybook-preview-wrapper"
+    data-websocket-url="{URL_PORT5005_API}" id="rasa-chat-widget"></div>
+  <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+```
