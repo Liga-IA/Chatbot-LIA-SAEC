@@ -24,7 +24,7 @@ Note que para executar comandos do RASA localmente pode ser que seja necessário
 
 - `$ pipenv --python 3.7`
 - `$ pipenv shell`
-- `$ pipenv install rasa`
+- `$ pipenv install rasa==2.8.10`
 
   - Instala o RASA
   - Demora um pouco, entre 15 a 30 minutos dependendo da sua internet
@@ -33,6 +33,8 @@ Note que para executar comandos do RASA localmente pode ser que seja necessário
   - inicia o projeto
 - caso esteja executando localmente: `$ pipenv run rasa shell` | caso esteja no gitpod: `$ rasa shell`
   - Aqui ele executa o bot pra conversar pela CLI, caso queira testar
+
+Caso esteja com preguiça de fazer isso, pode copiar o pipfile e depois só rodar `pipenv install` 😁
 
 ### Disponibilizando a API do bot online para integrar ao site
 
