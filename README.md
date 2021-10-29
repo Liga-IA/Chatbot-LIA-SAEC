@@ -2,7 +2,8 @@
 
 ## Ambiente de Desenvolvimento
 
-Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão mais recente da biblioteca da RASA, contudo como sabemos que é possível que algumas pessoas não tenham instalado certas coisas em suas máquinas locais, recomendados um ambiente online de desenvolvimento para este projeto, já que, desta forma, a maioria dos problemas é contornado e o resultado fica disponível online
+Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão mais recente da biblioteca da RASA, contudo como sabemos que é possível que algumas pessoas não tenham instalado certas coisas em suas máquinas locais, recomendados um ambiente online de desenvolvimento para este projeto, já que, desta forma, a maioria dos problemas é contornado e o resultado fica disponível online.
+Exemplo de link do gitpod: https://beige-whitefish-03dohmbn.ws-us18.gitpod.io
 
 ### Gitpod
 
@@ -34,7 +35,7 @@ Note que para executar comandos do RASA localmente pode ser que seja necessário
 - caso esteja executando localmente: `$ pipenv run rasa shell` | caso esteja no gitpod: `$ rasa shell`
   - Aqui ele executa o bot pra conversar pela CLI, caso queira testar
 
-Caso esteja com preguiça de fazer isso, pode copiar o pipfile e depois só rodar `pipenv install` 😁
+Caso esteja com preguiça de fazer isso, pode copiar o pipfile e depois só rodar `pipenv shell` e depois `pipenv install` 😁
 
 ### Disponibilizando a API do bot online para integrar ao site
 
