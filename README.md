@@ -8,7 +8,7 @@ Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão 
 
 O gitpod é um ambiente de desenvolvimento em nuvem gratuito (para repositórios públicos) que estaremos utilizando neste projeto. Para abrir um repositório em um ambiente deles, basta acessar **gitpod.io#{URL_GIT_REPO}**
 
-[<img height="26px" src="gitpod-icon,png" />](https://www.gitpod.io#https://github.com/Liga-IA/Chatbot-LIA-SAEC)
+[<img height="26px" src="gitpod-icon.png" target="_blank" />](https://www.gitpod.io#https://github.com/Liga-IA/Chatbot-LIA-SAEC)
 
 ### Versões das Dependências
 
