@@ -1,10 +1,10 @@
 # Chatbot-LIA-SAEC
 
 ## Ambiente de Desenvolvimento
-Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão mais recente da biblioteca da RASA, contudo como sabemos que é possível que algumas possas não tenham instalado certas coisas em suas maquinas locais, recomentados um ambiente online de desinvolvimento para este projeto, já que, desta forma, a maioria dos problemas é contornado e o resultado fica disponível online
+Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão mais recente da biblioteca da RASA, contudo como sabemos que é possível que algumas pessoas não tenham instalado certas coisas em suas máquinas locais, recomendados um ambiente online de desenvolvimento para este projeto, já que, desta forma, a maioria dos problemas é contornado e o resultado fica disponível online
 
 ### Gitpod
-O gitpod é um ambiente de desenvolvimento em núvem gratuido (para repositórios públicos) que estaremos utilizando neste projeto. Para abrir um repositório em um ambiente deles, basta acessar **gitpod.io#{URL_GIT_REPO}**
+O gitpod é um ambiente de desenvolvimento em nuvem gratuito (para repositórios públicos) que estaremos utilizando neste projeto. Para abrir um repositório em um ambiente deles, basta acessar **gitpod.io#{URL_GIT_REPO}**
 
 <a href="www.gitpod.io#https://github.com/Liga-IA/Chatbot-LIA-SAEC" 
    target="_blank">
@@ -21,7 +21,7 @@ O gitpod é um ambiente de desenvolvimento em núvem gratuido (para repositório
   - RASA SDK: 2.8.2
 
 ### Instalação e setup do ambiente
-note que para executar comendos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
+note que para executar comandos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
 - `$ pipenv install rasa`
     - Instala o RASA
     - Demora um pouco, entre 15 a 30 minutos dependendo da sua internet
