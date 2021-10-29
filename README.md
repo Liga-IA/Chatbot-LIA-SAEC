@@ -21,11 +21,13 @@ O gitpod é um ambiente de desenvolvimento em nuvem gratuito (para repositórios
   - RASA SDK: 2.8.2
 
 ### Instalação e setup do ambiente
-note que para executar comandos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
+Note que para executar comandos do RASA localmente pode ser que seja necessário o uso do `pipenv run` caso `rasa ....` não seja reconhecido como comando no seu terminal.
+- `$ pipenv --python 3.7`
+- `$ pipenv shell`
 - `$ pipenv install rasa`
     - Instala o RASA
     - Demora um pouco, entre 15 a 30 minutos dependendo da sua internet
-- `$ pipenv shell`
+
 - caso esteja executando localmente: `$ pipenv run rasa init` | caso esteja no gitpod: `$ rasa init`
     - inicia o projeto
 - caso esteja executando localmente: `$ pipenv run rasa shell` | caso esteja no gitpod: `$ rasa shell`
