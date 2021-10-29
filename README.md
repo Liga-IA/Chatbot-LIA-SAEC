@@ -47,7 +47,17 @@ Isso vai iniciar a API do chatbot na porta `5005`.
 
 ## Integrando com o site
 
-Adicione o segunte script na tag `body` do seu html
+### Ativação do endpoint
+Não se esqueça de habilitar o socket no credentials
+```
+socketio:
+  #  user_message_evt: <event name for user message>
+  #  bot_message_evt: <event name for bot messages>
+  session_persistence: true
+```
+
+### No seu frontend
+Adicione o seguinte script na tag `body` do seu html
 
 ```
   <div
