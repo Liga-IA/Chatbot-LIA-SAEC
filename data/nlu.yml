@@ -11,6 +11,7 @@ nlu:
     - hi
     - hello
     - eae
+    - salve!
 
 
 - intent: regsiter_ong
@@ -28,6 +29,11 @@ nlu:
     - quero deletar um dos meus casos
     - me ajude a deletar uma das minhas ações
     - quero excluir o meu caso
+    - deletar um caso
+    - excluir um caso
+    - excluir um projeto
+    - desejo remover um caso
+    - como faço pra extermiar um caso da minha ong?
 
 - intent: about_the_project
   examples: |
@@ -40,6 +46,7 @@ nlu:
   examples: |
     - eu gostaria de ajudar em um dos casos, como posso fazer isso?
     - Não encontrei como doar dinheiro para o caso no site
+    - como faço para colaborar num caso?
 
 
 - intent: goodbye
@@ -52,6 +59,7 @@ nlu:
     - flw
     - obrigado. falou!
     - falow
+    - saquei, então flw
 
 
 - intent: bot_challenge

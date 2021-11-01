@@ -12,7 +12,7 @@ intents:
 responses:
   utter_greet:
   - text: "Opa! Eae como vai?"
-  - text: "i, como posso ajudar?"
+  - text: "oi, como posso ajudar?"
 
 
   utter_did_that_help:

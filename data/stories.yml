@@ -21,6 +21,13 @@ stories:
   - action: utter_delete_case
   - action: utter_did_that_help
 
+- story: delete only path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: delete_case
+  - action: utter_delete_case
+  - action: utter_did_that_help
 
 - story: about path
   steps:
