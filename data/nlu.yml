@@ -3,90 +3,60 @@ version: "2.0"
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
+    - oi
+    - ei, pode me ajudar?
+    - pode me ajudar?
+    - tem alguém ai?
+    - preciso de ajuda
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hello
+    - eae
+
+
+- intent: regsiter_ong
+  examples: |
+    - gostaria de registrar uma nova ong.
+    - quero fazer um novo cadastro
+    - por favor, me cadastre
+    - cadastro
+    - quero registrar uma nova ONG
+    - me ajude a fazer um novo registro
+
+
+- intent: delete_case
+  examples: |
+    - quero deletar um dos meus casos
+    - me ajude a deletar uma das minhas ações
+    - quero excluir o meu caso
+
+- intent: about_the_project
+  examples: |
+    - o que é o be the hero?
+    - o que vcs fazem nessa empresa?
+    - sobre o que se trata esse projeto??
+
+
+- intent: how_to_help
+  examples: |
+    - eu gostaria de ajudar em um dos casos, como posso fazer isso?
+    - Não encontrei como doar dinheiro para o caso no site
+
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - até mais
+    - ate logo
+    - tchau
+    - adeus
+    - flw
+    - obrigado. falou!
+    - falow
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - voce é um robo?
+    - tu é um bot?
+    - eu estou falando com um humano?
+    - voce sabe se é uma maquina ou uma pessoa??

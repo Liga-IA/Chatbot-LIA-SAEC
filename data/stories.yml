@@ -2,29 +2,50 @@ version: "2.0"
 
 stories:
 
-- story: happy path
+- story: register only path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
+  - intent: regsiter_ong
+  - action: utter_register_ong
   - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  
 
-- story: sad path 2
+- story: register and delete path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
+  - intent: regsiter_ong
+  - action: utter_register_ong
+  - intent: delete_case
+  - action: utter_delete_case
   - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+
+
+- story: about path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about_the_project
+  - action: utter_about_the_project
+  - action: utter_did_that_help
+
+- story: help path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: how_to_help
+  - action: utter_how_to_help
+  - action: utter_did_that_help
+
+- story: about help path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about_the_project
+  - action: utter_about_the_project
+  - intent: how_to_help
+  - action: utter_how_to_help
+  - action: utter_did_that_help
+
+# Tenho que fazer o excluir que tem um listen ainda, mas n sei fazer isso
