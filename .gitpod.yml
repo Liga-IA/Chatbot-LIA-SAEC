@@ -1,7 +1,5 @@
 tasks:
-  - before: pipenv --rm
-  - init: pipenv shell
-  - command: pipenv install
+  - init: pipenv --rm && pipenv shell && pipenv install
 ports:
   - port: 5005
     visibility: public
