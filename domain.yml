@@ -1,5 +1,39 @@
 version: "2.0"
-
+actions:
+  - utter_greet
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_iamabot
+  - utter_register_ong
+  - utter_delete_case
+  - utter_about_the_project
+  - utter_how_to_help
+  - action_register_ong
+  - utter_ask_ong_name
+  - utter_ask_ong_contact
+  - utter_ask_ong_location
+entities:
+  - ong_name
+  - ong_email
+  - ong_whatsapp
+  - ong_city
+  - ong_uf
+slots:
+  ong_name:
+    type: text
+    auto_fill: false
+  ong_email:
+    type: text
+    auto_fill: false
+  ong_whatsapp:
+    type: text
+    auto_fill: false
+  ong_city:
+    type: text
+    auto_fill: false
+  ong_uf:
+    type: text
+    auto_fill: false
 intents:
   - greet
   - regsiter_ong
@@ -8,16 +42,17 @@ intents:
   - how_to_help
   - goodbye
   - bot_challenge
+  - give_ong_name
+  - give_ong_contact
+  - give_ong_location
 
 responses:
   utter_greet:
   - text: "Opa! Eae como vai?"
   - text: "oi, como posso ajudar?"
 
-
   utter_did_that_help:
   - text: "Isso te ajudou?"
-
 
   utter_goodbye:
   - text: "Tchau"
@@ -26,7 +61,14 @@ responses:
   - text: "Não sei se sou um robo... Você sabe se é um?"
 
   utter_register_ong:
-  - text: "Isso era pra ser uma custom de registro... estou em desenvolvimento ainda kk"
+  - text: "Ok! Vou precisar fazer algumas perguntas apenas..."
+  utter_ask_ong_name:
+  - text: Qual o nome da ong que deseja criar?
+
+  utter_ask_ong_contact:
+  - text: Show, {ong_name}! Quais são seu email e whatsapp? Responda como neste exemplo -> os contatos são 11974820650,dev.rodrigofs@gmail.com
+  utter_ask_ong_location:
+  - text: Onde fica a {ong_name}? Resposta no formato -> a ong fica em cidade,UF
 
   utter_delete_case:
   - text: "Isso era pra ser uma custom de exclusão de casos... estou em desenvolvimento ainda kk"

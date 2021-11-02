@@ -1,6 +1,22 @@
 version: "2.0"
 
 nlu:
+- intent: give_ong_name
+  examples: |
+    - a minha ong se chama [casa do pato manco](ong_name)
+    - o nome é [APAE](ong_name)
+    - a que eu quero criar se chama [Esquadrão do falo médio](ong_name)
+- intent: give_ong_contact
+  examples: |
+    - os contatos são [11974820650](ong_whatsapp),[dev.rodrigofs@gmail.com](ong_email)
+    - o whats é [11997039279] e o email é [eng.silviomartins@hotmail.com]
+
+- intent: give_ong_location
+  examples: |
+    - a ong fica em [mogi das cruzes](ong_city),[SP](ong_uf)
+    - o estado é [MG](ong_uf) e a city é [bh](ong_city)
+    - cidade: "[palmas](ong_city)" e Estado: "[TO](ong_uf)"
+
 - intent: greet
   examples: |
     - oi

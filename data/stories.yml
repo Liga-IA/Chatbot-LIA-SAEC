@@ -8,6 +8,13 @@ stories:
   - action: utter_greet
   - intent: regsiter_ong
   - action: utter_register_ong
+  - action: utter_ask_ong_name
+  - intent: give_ong_name
+  - action: utter_ask_ong_contact
+  - intent: give_ong_contact
+  - action: utter_ask_ong_location
+  - intent: give_ong_location
+  - action: action_register_ong
   - action: utter_did_that_help
   
 
@@ -17,6 +24,13 @@ stories:
   - action: utter_greet
   - intent: regsiter_ong
   - action: utter_register_ong
+  - action: utter_ask_ong_name
+  - intent: give_ong_name
+  - action: utter_ask_ong_contact
+  - intent: give_ong_contact
+  - action: utter_ask_ong_location
+  - intent: give_ong_location
+  - action: action_register_ong
   - intent: delete_case
   - action: utter_delete_case
   - action: utter_did_that_help
