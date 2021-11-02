@@ -39,7 +39,7 @@ Caso esteja com preguiça de fazer isso, pode copiar o pipfile e depois só roda
 
 ### Disponibilizando a API do bot online para integrar ao site
 
-Caso esteja executando localmente, os procedimentos aqui apenas serão visivei em sua rede local, a não ser que implemente um tunnel das portas utilizadas para a rede externa. Por isso recomendamos o uso do gitpod, ou outra plataforma que permita o acesso às portas via HTTPS
+Caso esteja executando localmente, os procedimentos aqui apenas serão visivel em sua rede local, a não ser que implemente um tunnel das portas utilizadas para a rede externa. Por isso recomendamos o uso do gitpod, ou outra plataforma que permita o acesso às portas via HTTPS
 
 `$ rasa run -m models --enable-api --cors "*"`
 
@@ -48,7 +48,9 @@ Isso vai iniciar a API do chatbot na porta `5005`.
 ## Integrando com o site
 
 ### Ativação do endpoint
+
 Não se esqueça de habilitar o socket no credentials
+
 ```
 socketio:
   #  user_message_evt: <event name for user message>
@@ -56,7 +58,15 @@ socketio:
   session_persistence: true
 ```
 
+E o endpoint das custom actions
+
+```
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+```
+
 ### No seu frontend
+
 Adicione o seguinte script na tag `body` do seu html
 
 ```
