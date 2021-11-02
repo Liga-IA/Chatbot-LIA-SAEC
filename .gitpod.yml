@@ -1,6 +1,7 @@
 tasks:
   - before: pipenv --rm
   - init: pipenv install
+  command: npm run dev
 ports:
   - port: 5005
     visibility: public
