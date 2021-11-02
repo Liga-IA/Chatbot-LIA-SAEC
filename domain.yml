@@ -1,4 +1,10 @@
 version: "2.0"
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
 actions:
   - utter_greet
   - utter_did_that_help
@@ -20,23 +26,33 @@ entities:
   - ong_uf
 slots:
   ong_name:
-    type: text
-    auto_fill: false
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   ong_email:
-    type: text
-    auto_fill: false
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   ong_whatsapp:
-    type: text
-    auto_fill: false
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   ong_city:
-    type: text
-    auto_fill: false
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
   ong_uf:
-    type: text
-    auto_fill: false
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
 intents:
   - greet
-  - regsiter_ong
+  - register_ong
   - delete_case
   - about_the_project
   - how_to_help
@@ -48,37 +64,33 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Opa! Eae como vai?"
-  - text: "oi, como posso ajudar?"
+    - text: "Opa! Eae como vai?"
+    - text: "oi, como posso ajudar?"
 
   utter_did_that_help:
-  - text: "Isso te ajudou?"
+    - text: "Isso te ajudou?"
 
   utter_goodbye:
-  - text: "Tchau"
+    - text: "Tchau"
 
   utter_iamabot:
-  - text: "Não sei se sou um robo... Você sabe se é um?"
+    - text: "Não sei se sou um robo... Você sabe se é um?"
 
   utter_register_ong:
-  - text: "Ok! Vou precisar fazer algumas perguntas apenas..."
+    - text: "Ok! Vou precisar fazer algumas perguntas apenas..."
   utter_ask_ong_name:
-  - text: Qual o nome da ong que deseja criar?
+    - text: Qual o nome da ong que deseja criar?
 
   utter_ask_ong_contact:
-  - text: Show, {ong_name}! Quais são seu email e whatsapp? Responda como neste exemplo -> os contatos são 11974820650,dev.rodrigofs@gmail.com
+    - text: Show, {ong_name}! Quais são seu email e whatsapp? Responda como neste exemplo -> os contatos são 11974820650,dev.rodrigofs@gmail.com
   utter_ask_ong_location:
-  - text: Onde fica a {ong_name}? Resposta no formato -> a ong fica em cidade,UF
+    - text: Onde fica a {ong_name}? Resposta no formato -> a ong fica em cidade,UF
 
   utter_delete_case:
-  - text: "Isso era pra ser uma custom de exclusão de casos... estou em desenvolvimento ainda kk"
+    - text: "Isso era pra ser uma custom de exclusão de casos... estou em desenvolvimento ainda kk"
 
   utter_about_the_project:
-  - text: "O be the hero serve para poder ajudar ONGs a encontrarem pessoas dispostas a ajudá-las em seus projetos. Você pode criar uma ong no site web e criar casos ou pode ajudar nos casos entrando no celular e buscando o que prefere! Aqui está o QR code: --botar qr code aqui--"
+    - text: "O be the hero serve para poder ajudar ONGs a encontrarem pessoas dispostas a ajudá-las em seus projetos. Você pode criar uma ong no site web e criar casos ou pode ajudar nos casos entrando no celular e buscando o que prefere! Aqui está o QR code: --botar qr code aqui--"
 
   utter_how_to_help:
-  - text: "Para ajudar em um caso, é preciso acessar o aplicativo no celular! Aqui está o QR code: --botar qr code aqui--"
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+    - text: "Para ajudar em um caso, é preciso acessar o aplicativo no celular! Aqui está o QR code: --botar qr code aqui--"

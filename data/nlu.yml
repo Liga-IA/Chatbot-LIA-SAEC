@@ -1,86 +1,85 @@
-version: "2.0"
+aversion: "2.0"
 
 nlu:
-- intent: give_ong_name
-  examples: |
-    - a minha ong se chama [casa do pato manco](ong_name)
-    - o nome é [APAE](ong_name)
-    - a que eu quero criar se chama [Esquadrão do falo médio](ong_name)
-- intent: give_ong_contact
-  examples: |
-    - os contatos são [11974820650](ong_whatsapp),[dev.rodrigofs@gmail.com](ong_email)
-    - o whats é [11997039279] e o email é [eng.silviomartins@hotmail.com]
+  - intent: give_ong_name
+    examples: |
+      - a minha ong se chama [casa do pato manco](ong_name)
+      - o nome é [APAE](ong_name)
+      - a que eu quero criar se chama [Esquadrão do falo médio](ong_name)
 
-- intent: give_ong_location
-  examples: |
-    - a ong fica em [mogi das cruzes](ong_city),[SP](ong_uf)
-    - o estado é [MG](ong_uf) e a city é [bh](ong_city)
-    - cidade: "[palmas](ong_city)" e Estado: "[TO](ong_uf)"
+  - intent: give_ong_contact
+    examples: |
+      - os contatos são [11974820650](ong_whatsapp), [dev.rodrigofs@gmail.com](ong_email)
+      - o whats é [11997039279](ong_whatsapp) e o email é [eng.silviomartins@hotmail.com](ong_email)
+      - o email é [jonas@hotmail.com](ong_email) e o whjatsapp é [54991919191](ong_whatsapp)
 
-- intent: greet
-  examples: |
-    - oi
-    - ei, pode me ajudar?
-    - pode me ajudar?
-    - tem alguém ai?
-    - preciso de ajuda
-    - hi
-    - hello
-    - eae
-    - salve!
+  - intent: give_ong_location
+    examples: |
+      - a ong fica em [mogi das cruzes](ong_city), [SP](ong_uf)
+      - a ong fica em [Passo Fundo](ong_city), [RS](ong_uf)
+      - a ong fica em [ararangua](ong_city), [SC](ong_uf)
+      - o estado é [MG](ong_uf) e a city é [bh](ong_city)
+      - cidade: "[palmas](ong_city)" e Estado: "[TO](ong_uf)"
 
+  - intent: greet
+    examples: |
+      - oi
+      - ei, pode me ajudar?
+      - pode me ajudar?
+      - tem alguém ai?
+      - preciso de ajuda
+      - hi
+      - hello
+      - eae
+      - salve!
 
-- intent: regsiter_ong
-  examples: |
-    - gostaria de registrar uma nova ong.
-    - quero fazer um novo cadastro
-    - por favor, me cadastre
-    - cadastro
-    - quero registrar uma nova ONG
-    - me ajude a fazer um novo registro
+  - intent: register_ong
+    examples: |
+      - gostaria de registrar uma nova ong.
+      - quero fazer um novo cadastro
+      - por favor, me cadastre
+      - cadastro
+      - quero registrar uma nova ONG
+      - me ajude a fazer um novo registro
 
+  - intent: delete_case
+    examples: |
+      - quero deletar um dos meus casos
+      - me ajude a deletar uma das minhas ações
+      - quero excluir o meu caso
+      - deletar um caso
+      - excluir um caso
+      - excluir um projeto
+      - desejo remover um caso
+      - como faço pra extermiar um caso da minha ong?
 
-- intent: delete_case
-  examples: |
-    - quero deletar um dos meus casos
-    - me ajude a deletar uma das minhas ações
-    - quero excluir o meu caso
-    - deletar um caso
-    - excluir um caso
-    - excluir um projeto
-    - desejo remover um caso
-    - como faço pra extermiar um caso da minha ong?
+  - intent: about_the_project
+    examples: |
+      - o que é o be the hero?
+      - o que vcs fazem nessa empresa?
+      - sobre o que se trata esse projeto??
 
-- intent: about_the_project
-  examples: |
-    - o que é o be the hero?
-    - o que vcs fazem nessa empresa?
-    - sobre o que se trata esse projeto??
+  - intent: how_to_help
+    examples: |
+      - eu gostaria de ajudar em um dos casos, como posso fazer isso?
+      - Não encontrei como doar dinheiro para o caso no site
+      - como faço para colaborar num caso?
 
+  - intent: goodbye
+    examples: |
+      - bye
+      - até mais
+      - ate logo
+      - tchau
+      - adeus
+      - flw
+      - obrigado. falou!
+      - falow
+      - saquei, então flw
 
-- intent: how_to_help
-  examples: |
-    - eu gostaria de ajudar em um dos casos, como posso fazer isso?
-    - Não encontrei como doar dinheiro para o caso no site
-    - como faço para colaborar num caso?
-
-
-- intent: goodbye
-  examples: |
-    - bye
-    - até mais
-    - ate logo
-    - tchau
-    - adeus
-    - flw
-    - obrigado. falou!
-    - falow
-    - saquei, então flw
-
-
-- intent: bot_challenge
-  examples: |
-    - voce é um robo?
-    - tu é um bot?
-    - eu estou falando com um humano?
-    - voce sabe se é uma maquina ou uma pessoa??
+  - intent: bot_challenge
+    examples: |
+      - voce é um robo?
+      - tu é um bot?
+      - eu estou falando com um humano?
+      - voce sabe se é uma maquina ou uma pessoa??
