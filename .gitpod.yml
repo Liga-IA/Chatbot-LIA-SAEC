@@ -1,2 +1,7 @@
 tasks:
   - before: sh ./gitpod_scripts/setup.sh
+ports:
+  - port: 5005
+    visibility: public
+  - port: 5055
+    visibility: public
