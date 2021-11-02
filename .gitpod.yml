@@ -1,5 +1,6 @@
 tasks:
-  - before: sh ./gitpod_scripts/setup.sh
+  - before: pipenv --rm
+  - init: pipenv install
 ports:
   - port: 5005
     visibility: public
