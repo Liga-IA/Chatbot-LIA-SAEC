@@ -1,2 +1,2 @@
 tasks:
-  - before: sh ./scripts/setup.sh
+  - before: sh ./gitpod_scripts/setup.sh
