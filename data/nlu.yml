@@ -4,6 +4,7 @@ nlu:
   - intent: give_ong_name
     examples: |
       - a minha ong se chama [casa do pato manco](ong_name)
+      - nome seria [Liga de IA](ong_name)
       - o nome é [APAE](ong_name)
       - a que eu quero criar se chama [Esquadrão do falo médio](ong_name)
 
