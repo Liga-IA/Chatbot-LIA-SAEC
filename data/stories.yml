@@ -32,13 +32,25 @@ stories:
       - action: utter_register_ong
       - action: utter_ask_ong_name
       - intent: give_ong_name
+        entities:
+          - ong_name
       - action: utter_ask_ong_contact
       - intent: give_ong_contact
+        entities:
+          - ong_email
+          - ong_whatsapp
       - action: utter_ask_ong_location
       - intent: give_ong_location
+        entities:
+          - ong_city
+          - ong_uf
       - action: action_register_ong
       - intent: delete_case
       - action: utter_delete_case
+      - intent: give_ong_id
+        entities:
+          - ong_id
+      - action: action_delete_case
       - action: utter_did_that_help
 
   - story: delete only path
@@ -47,6 +59,10 @@ stories:
       - action: utter_greet
       - intent: delete_case
       - action: utter_delete_case
+      - intent: give_ong_id
+        entities:
+          - ong_id
+      - action: action_delete_case
       - action: utter_did_that_help
 
   - story: about path

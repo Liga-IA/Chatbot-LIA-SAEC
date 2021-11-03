@@ -1,6 +1,12 @@
 aversion: "2.0"
 
 nlu:
+  - intent: give_ong_id
+    examples: |
+      - o id é [8f6a07bb](ong_id)
+      - id: [13bbaaff](ong_id)
+      - id =  [cc318a9f](ong_id)
+      - id é [7019b3d3](ong_id)
   - intent: give_ong_name
     examples: |
       - a minha ong se chama [casa do pato manco](ong_name)

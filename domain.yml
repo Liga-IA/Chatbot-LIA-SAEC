@@ -18,14 +18,22 @@ actions:
   - utter_ask_ong_name
   - utter_ask_ong_contact
   - utter_ask_ong_location
+  - action_delete_case
 entities:
   - ong_name
   - ong_email
   - ong_whatsapp
   - ong_city
   - ong_uf
+  - ong_id
+
 slots:
   ong_name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  ong_id:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -61,6 +69,7 @@ intents:
   - give_ong_name
   - give_ong_contact
   - give_ong_location
+  - give_ong_id
 
 responses:
   utter_greet:
@@ -87,10 +96,12 @@ responses:
     - text: Onde fica a {ong_name}? Resposta no formato -> a ong fica em cidade,UF
 
   utter_delete_case:
-    - text: "Isso era pra ser uma custom de exclusão de casos... estou em desenvolvimento ainda kk"
+    - text: "Por favor informe o código da sua ong no padrão - > id: aa11bb44"
 
   utter_about_the_project:
-    - text: "O be the hero serve para poder ajudar ONGs a encontrarem pessoas dispostas a ajudá-las em seus projetos. Você pode criar uma ong no site web e criar casos ou pode ajudar nos casos entrando no celular e buscando o que prefere! Aqui está o QR code: --botar qr code aqui--"
+    - text: "O be the hero serve para poder ajudar ONGs a encontrarem pessoas dispostas a ajudá-las em seus projetos. Você pode criar uma ong no site web e criar casos ou pode ajudar nos casos entrando no celular e buscando o que prefere! Aqui está o QR code:"
+      image: "https://raw.githubusercontent.com/Liga-IA/Chatbot-LIA-SAEC/main/qrcode_4292678_.png"
 
   utter_how_to_help:
-    - text: "Para ajudar em um caso, é preciso acessar o aplicativo no celular! Aqui está o QR code: --botar qr code aqui--"
+    - text: "Para ajudar em um caso, é preciso acessar o aplicativo no celular! Aqui está o QR code:"
+      image: "https://raw.githubusercontent.com/Liga-IA/Chatbot-LIA-SAEC/main/qrcode_4292678_.png"

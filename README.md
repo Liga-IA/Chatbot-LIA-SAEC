@@ -72,7 +72,7 @@ Adicione o seguinte script na tag `body` do seu html
 ```
   <div
     data-root-element-id="storybook-preview-wrapper"
-    data-websocket-url="{URL_PORT5005_API}" id="rasa-chat-widget"></div>
+    data-websocket-url="https://5005-aqua-gayal-qstss16p.ws-us17.gitpod.io" id="rasa-chat-widget"></div>
   <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
 ```
 
