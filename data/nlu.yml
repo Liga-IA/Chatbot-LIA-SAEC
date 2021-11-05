@@ -1,12 +1,18 @@
 aversion: "2.0"
 
 nlu:
+  - intent: delete_specific_case
+    examples: |
+      - delete o caso [1](case_id) da ong [89894545](ong_id)
+      - deleta o caso especifoc aqui: [3](case_id)
   - intent: give_ong_id
     examples: |
       - o id é [8f6a07bb](ong_id)
       - id: [13bbaaff](ong_id)
       - id =  [cc318a9f](ong_id)
       - id é [7019b3d3](ong_id)
+      - [a940454f](ong_id)
+
   - intent: give_ong_name
     examples: |
       - a minha ong se chama [casa do pato manco](ong_name)
@@ -39,6 +45,10 @@ nlu:
       - hello
       - eae
       - salve!
+      - bom dia
+      - boa tarde
+      - boa noite
+      - ola
 
   - intent: register_ong
     examples: |
@@ -90,3 +100,18 @@ nlu:
       - tu é um bot?
       - eu estou falando com um humano?
       - voce sabe se é uma maquina ou uma pessoa??
+  - intent: cancel_operation
+    examples: |
+      - desisti
+      - não quero mais fazer isso
+      - cancelar
+      - cancela
+      - para
+      - volta
+      - chega
+      - basta
+      - abortar operação
+
+regex: ong_id
+examples: |
+  - [a-zA-Z0-9]{8}

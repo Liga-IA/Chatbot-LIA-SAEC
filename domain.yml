@@ -18,7 +18,9 @@ actions:
   - utter_ask_ong_name
   - utter_ask_ong_contact
   - utter_ask_ong_location
-  - action_delete_case
+  - utter_cancel_operation
+  - utter_search_cases
+  - action_delete_case_selection
 entities:
   - ong_name
   - ong_email
@@ -26,9 +28,15 @@ entities:
   - ong_city
   - ong_uf
   - ong_id
+  - case_id
 
 slots:
   ong_name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  case_id:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -70,11 +78,18 @@ intents:
   - give_ong_contact
   - give_ong_location
   - give_ong_id
+  - cancel_operation
+  - delete_specific_case
 
 responses:
+  utter_cancel_operation:
+    - text: "Ok, cancelando a operação"
   utter_greet:
     - text: "Opa! Eae como vai?"
     - text: "oi, como posso ajudar?"
+
+  utter_search_cases:
+    - text : OK Verificando os casos da ong com id {ong_id}
 
   utter_did_that_help:
     - text: "Isso te ajudou?"

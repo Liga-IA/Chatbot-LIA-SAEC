@@ -1,6 +1,10 @@
 version: "2.0"
 
 stories:
+  - story: cancell whatever
+    steps:
+      - intent: cancel_operation
+      - action: utter_cancel_operation
   - story: register only path
     steps:
       - intent: greet
@@ -50,7 +54,8 @@ stories:
       - intent: give_ong_id
         entities:
           - ong_id
-      - action: action_delete_case
+      - action: utter_search_cases
+      - action: action_delete_case_selection
       - action: utter_did_that_help
 
   - story: delete only path
@@ -62,7 +67,8 @@ stories:
       - intent: give_ong_id
         entities:
           - ong_id
-      - action: action_delete_case
+      - action: utter_search_cases
+      - action: action_delete_case_selection
       - action: utter_did_that_help
 
   - story: about path

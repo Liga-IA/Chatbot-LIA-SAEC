@@ -2,7 +2,7 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-API_PATH = "https://3333-tan-goose-kjycxojb.ws-us17.gitpod.io"
+API_PATH = "https://3333-aquamarine-warbler-xbftz3tt.ws-us17.gitpod.io"
 
 from typing import Any, Text, Dict, List
 
@@ -52,10 +52,10 @@ class ActionRegistraOng(Action):
             dispatcher.utter_message(text ='registrando a ONG ' + str(nome) + '\n da ' + local + "\n contatos: " + contatos +"\n\n" + "O código da sua ong é: " + r.json()['id'])
 
 
-class ActionExcluiCaso(Action):
+class ActionExclusionSelect(Action):
 
     def name(self) -> Text:
-        return "action_delete_case"
+        return "action_delete_case_selection"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -70,7 +70,7 @@ class ActionExcluiCaso(Action):
             
             r = requests.get(API_PATH+ '/ongs/'+str(id))  
             if(int(r.status_code)==404):
-                dispatcher.utter_message(text ="Não há casos para serem excluidos")
+                dispatcher.utter_message(text ="Não há casos para serem excluidos ou id incorreto")
                 return
             if(int(r.status_code)==500 or int(r.status_code)==401 ):
                 dispatcher.utter_message(text ="Pera que eu fiquei confuso.... deu um errinho aqui kk vamos de novo!")
@@ -80,7 +80,8 @@ class ActionExcluiCaso(Action):
 
             btns = []
             for i in range(len(cases)):
-                btns.append({"payload":"ok","title":cases[i]["title"]})
-            dispatcher.utter_button_message("Escolha qual caso quer excluir", btns)
+                btns.append({"payload":"/delete_specific_case","title":cases[i]["title"]})
+            btns.append({"payload":"/cancel_operation","title":"Nenhum"})
+            dispatcher.utter_message(text="Escolha qual caso quer excluir", buttons=btns)
         else:
             dispatcher.utter_message(text ="Id não informado, ou está incorreto")
