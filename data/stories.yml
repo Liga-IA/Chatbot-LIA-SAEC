@@ -5,71 +5,22 @@ stories:
     steps:
       - intent: cancel_operation
       - action: utter_cancel_operation
+      
   - story: register only path
     steps:
       - intent: greet
       - action: utter_greet
       - intent: register_ong
-      - action: utter_register_ong
-      - action: utter_ask_ong_name
-      - intent: give_ong_name
-        entities:
-          - ong_name
-      - action: utter_ask_ong_contact
-      - intent: give_ong_contact
-        entities:
-          - ong_email
-          - ong_whatsapp
-      - action: utter_ask_ong_location
-      - intent: give_ong_location
-        entities:
-          - ong_city
-          - ong_uf
-      - action: action_register_ong
-      - action: utter_did_that_help
-
-  - story: register and delete path
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: register_ong
-      - action: utter_register_ong
-      - action: utter_ask_ong_name
-      - intent: give_ong_name
-        entities:
-          - ong_name
-      - action: utter_ask_ong_contact
-      - intent: give_ong_contact
-        entities:
-          - ong_email
-          - ong_whatsapp
-      - action: utter_ask_ong_location
-      - intent: give_ong_location
-        entities:
-          - ong_city
-          - ong_uf
-      - action: action_register_ong
-      - intent: delete_case
-      - action: utter_delete_case
-      - intent: give_ong_id
-        entities:
-          - ong_id
-      - action: utter_search_cases
-      - action: action_delete_case_selection
-      - action: utter_did_that_help
+      - action: create_ong_form
+      - active_loop: create_ong_form
 
   - story: delete only path
     steps:
       - intent: greet
       - action: utter_greet
       - intent: delete_case
-      - action: utter_delete_case
-      - intent: give_ong_id
-        entities:
-          - ong_id
-      - action: utter_search_cases
-      - action: action_delete_case_selection
-      - action: utter_did_that_help
+      - action: delete_case_form
+      - active_loop: delete_case_form
 
   - story: about path
     steps:
@@ -87,13 +38,4 @@ stories:
       - action: utter_how_to_help
       - action: utter_did_that_help
 
-  - story: about help path
-    steps:
-      - intent: greet
-      - action: utter_greet
-      - intent: about_the_project
-      - action: utter_about_the_project
-      - intent: how_to_help
-      - action: utter_how_to_help
-      - action: utter_did_that_help
 # Tenho que fazer o excluir que tem um listen ainda, mas n sei fazer isso

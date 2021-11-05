@@ -10,17 +10,23 @@ actions:
   - utter_did_that_help
   - utter_goodbye
   - utter_iamabot
-  - utter_register_ong
-  - utter_delete_case
   - utter_about_the_project
   - utter_how_to_help
+  - utter_register_ong
+  - utter_ong_creating
   - action_register_ong
   - utter_ask_ong_name
-  - utter_ask_ong_contact
-  - utter_ask_ong_location
+  - utter_ask_ong_email
+  - utter_ask_ong_whatsapp
+  - utter_ask_ong_city
+  - utter_ask_ong_uf
   - utter_cancel_operation
+  - utter_delete_case
   - utter_search_cases
+  - utter_ask_ong_id
   - action_delete_case_selection
+  - action_delete_case_by_id
+
 entities:
   - ong_name
   - ong_email
@@ -28,44 +34,46 @@ entities:
   - ong_city
   - ong_uf
   - ong_id
-  - case_id
-
+  - case_id   
+  
 slots:
   ong_name:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   case_id:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   ong_id:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   ong_email:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   ong_whatsapp:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   ong_city:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
   ong_uf:
-    type: rasa.shared.core.slots.TextSlot
+    type: text
     initial_value: null
     auto_fill: true
     influence_conversation: true
+
+
 intents:
   - greet
   - register_ong
@@ -74,14 +82,18 @@ intents:
   - how_to_help
   - goodbye
   - bot_challenge
-  - give_ong_name
-  - give_ong_contact
-  - give_ong_location
-  - give_ong_id
   - cancel_operation
   - delete_specific_case
+  - inform
+
+
+  
 
 responses:
+  utter_ask_ong_id:
+    - text: "Qual o id da sua ong?"
+  utter_ong_creating:
+    - text: "Conectando com o servidor..."
   utter_cancel_operation:
     - text: "Ok, cancelando a operação"
   utter_greet:
@@ -89,7 +101,7 @@ responses:
     - text: "oi, como posso ajudar?"
 
   utter_search_cases:
-    - text : OK Verificando os casos da ong com id {ong_id}
+    - text: OK Verificando os casos da ong com id {ong_id}
 
   utter_did_that_help:
     - text: "Isso te ajudou?"
@@ -102,13 +114,20 @@ responses:
 
   utter_register_ong:
     - text: "Ok! Vou precisar fazer algumas perguntas apenas..."
-  utter_ask_ong_name:
-    - text: Qual o nome da ong que deseja criar?
 
-  utter_ask_ong_contact:
-    - text: Show, {ong_name}! Quais são seu email e whatsapp? Responda como neste exemplo -> os contatos são 11974820650,dev.rodrigofs@gmail.com
-  utter_ask_ong_location:
-    - text: Onde fica a {ong_name}? Resposta no formato -> a ong fica em cidade,UF
+  utter_ask_ong_name:
+    - text: Qual o nome da ong que deseja criar? (pelo menos 4 caracteres)
+
+  utter_ask_ong_whatsapp:
+    - text: Show, {ong_name}! Qual seu whats? (sem tracos,ou parenteses. Só os 11 numeros)
+
+  utter_ask_ong_email:
+    - text: ok, {ong_name}! Qual seu email? ex -> dev.rodrigofs@gmail.com
+  utter_ask_ong_city:
+    - text: Em que cidade fica a {ong_name}? Resposta no formato -> Ararangua
+    
+  utter_ask_ong_uf:
+    - text: E em qual estado isso é mesmo?? Resposta no formato sigla -> SP
 
   utter_delete_case:
     - text: "Por favor informe o código da sua ong no padrão - > id: aa11bb44"
@@ -120,3 +139,25 @@ responses:
   utter_how_to_help:
     - text: "Para ajudar em um caso, é preciso acessar o aplicativo no celular! Aqui está o QR code:"
       image: "https://raw.githubusercontent.com/Liga-IA/Chatbot-LIA-SAEC/main/qrcode_4292678_.png"
+
+
+forms:
+  create_ong_form:
+    required_slots:
+      ong_name:
+        - type: from_text
+      ong_whatsapp:
+        - entity: ong_whatsapp
+          type: from_entity
+      ong_email:
+        - entity: ong_email
+          type: from_entity
+      ong_city:
+        - type: from_text
+      ong_uf:
+        - entity: ong_uf
+          type: from_entity
+  delete_case_form:
+    required_slots:
+      ong_id:
+        - type: from_text

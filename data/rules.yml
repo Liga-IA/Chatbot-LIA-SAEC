@@ -7,7 +7,53 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
+- rule: Cancelar operação
+  steps:
+  - intent: cancel_operation
+  - action: utter_cancel_operation
+
+- rule: deletar caso especifico
+  steps:
+  - intent: delete_specific_case
+  - action: action_delete_case_by_id
+
 - rule: Dizer se é um robo sempre que perguntar sobre
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate create ong form
+  steps:
+  - intent: register_ong
+  - action: create_ong_form
+  - active_loop: create_ong_form
+
+- rule: Submit create ong form
+  condition:
+  - active_loop: create_ong_form
+  steps:
+  - action: create_ong_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_ong_creating
+  - action: action_register_ong
+
+
+  
+- rule: Activate delete case form
+  steps:
+  - intent: delete_case
+  - action: delete_case_form
+  - active_loop: delete_case_form
+
+- rule: Submit delete case form
+  condition:
+  - active_loop: delete_case_form
+  steps:
+  - action: delete_case_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_search_cases
+  - action: action_delete_case_selection
