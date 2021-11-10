@@ -5,7 +5,7 @@
 <a href="./Preparação do Ambiente para o Minicurso Chatbot.pdf" target="_blank">TUTORIAL DE INSTALAÇÃO</a>
 
 Para o desenvolvimento, é necessário a utilização do python 3.7 e a versão mais recente da biblioteca da RASA, contudo como sabemos que é possível que algumas pessoas não tenham instalado certas coisas em suas máquinas locais, recomendados um ambiente online de desenvolvimento para este projeto, já que, desta forma, a maioria dos problemas é contornado e o resultado fica disponível online.
-Exemplo de link do gitpod: https://beige-whitefish-03dohmbn.ws-us18.gitpod.io
+**Exemplo** de link do gitpod: https://beige-whitefish-03dohmbn.ws-us18.gitpod.io
 
 ### Gitpod
 
